@@ -10,7 +10,7 @@ import java.util.List;
 public class IntegerArrayTest {
     //1-D int array pass
     //1-D String array pass
-    @Output
+
     @Input(value = "[1,2,3]",container = "array",type = "int")
     @Solution
     public void IntegerarrayTest(int[] nums){
