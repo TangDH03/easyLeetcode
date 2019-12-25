@@ -32,5 +32,6 @@ public class Leet {
         - @Solution is an  identifier of the method you want to run
 
 
-## Problem
-- container array only support 1 dimension,but I don't know how to make it support  multi dimension(2-infinity),if you have some good idea ,welcome to raise a PR
+## TODO
+- finish TreeNode
+- finish LinkedList
