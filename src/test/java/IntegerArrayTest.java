@@ -11,10 +11,12 @@ public class IntegerArrayTest {
     //1-D int array pass
     //1-D String array pass
 
-    @Input(value = "[1,2,3]",container = "array",type = "int")
+    @Input(value = "[[4.3,5.31],[6.2,7.3],[8.1,9.2]]",container = "array",type = "float")
+    @Input(value = "[[[12,31,32],[12,32,32]],[[12,31,32],[12,32,32]]]",container = "array",type = "int")
     @Solution
-    public void IntegerarrayTest(int[] nums){
-        System.out.println(Arrays.toString(nums));
+    public void IntegerarrayTest(float[][] nums,int[][][] numm)
+    {
+        System.out.println("I'm in");
     }
 
     public static void main(String[] args){

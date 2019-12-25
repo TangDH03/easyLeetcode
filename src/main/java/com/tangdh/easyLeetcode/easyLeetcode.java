@@ -38,10 +38,8 @@ public class easyLeetcode {
             String type = input.type();
             String value = input.value();
             String container = input.container();
-            //Object object = conveter.doChange(value,container,type);
-            Object object = new int[]{1,2,3};
+            Object object = conveter.doChange(value,container,type);
             objects.add(object);
-            //objects.add(new Object[]{1,2,3,45});
         }
 
         //inVokeMethod
