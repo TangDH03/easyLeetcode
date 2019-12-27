@@ -54,8 +54,11 @@ public class listTest {
     }
 ```
 value is just like leetcode,but you need to specify the argument according to the type
+
 double ---> DoubleTreeNode
+
 int --------->            IntegerTreeNode
+
 float-------> FloatTreeNode
 #### For LinkedList
 ```java
@@ -73,8 +76,11 @@ public class LinkdedListTest {
 }
 ```
 The use of LinkedList is similar to TreeNode
+
 double ---> DoubleListNode
+
 int --------->            IntegerListNode
+
 float-------> FloatListNode
 
 #### Contribute
