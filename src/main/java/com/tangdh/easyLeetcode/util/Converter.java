@@ -2,7 +2,9 @@ package com.tangdh.easyLeetcode.util;
 
 import com.tangdh.easyLeetcode.Enum.Type;
 import com.tangdh.easyLeetcode.Model.ListNode;
+import com.tangdh.easyLeetcode.Model.ListNodeFactory;
 import com.tangdh.easyLeetcode.Model.TreeNode;
+import com.tangdh.easyLeetcode.Model.TreeNodeFactory;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
@@ -38,25 +40,9 @@ public class Converter {
     }
 
     private ListNode LinkedListChange(String value, String type) {
-        Class<?> clazz = TypeHandler(type);
-        ListNode dummy= new ListNode();
-        ListNode now = dummy;
-        StringBuilder sb = new StringBuilder();
-        for(char c:value.toCharArray()){
-            if(c=='['||c==' '||c=='\"'||c=='\'')
-                continue;
-            else if(c==','){
-                now.next = new ListNode(getValue(sb.toString(),clazz));
-                now = now.next;
-                sb.setLength(0);
-            }else  if(c==']'){
-                if(sb.length()!=0)
-                    now.next = new ListNode(getValue(sb.toString(),clazz));
-            }else {
-                sb.append(c);
-            }
-        }
-        return dummy.next;
+        List arrays = ListChange(value,type);
+        //return TreeNode.makeTree(ArrayChange(value,"string"));
+        return ListNodeFactory.GetListNode(arrays.toArray(),type);
     }
 
 
@@ -117,12 +103,15 @@ public class Converter {
     }
 
     private Object TreeChange(String value,String type){
+        List arrays = ListChange(value,type);
         //return TreeNode.makeTree(ArrayChange(value,"string"));
-        return null;
+        return TreeNodeFactory.GetTreeNode(arrays.toArray(),type);
     }
 
     private  Object getValue(String value,Class<?> clazz){
         Object object = null;
+        if(value.equals("null"))
+            return "_null_";
         try {
             if(clazz.equals(String.class)) {
                 object = value;
@@ -148,9 +137,11 @@ public class Converter {
         else if("float".equals(type))
             return Float.class;
         else if("double".equals(type))
+
             return Double.class;
-        else
-            return null;
+        else if("char".equals(type))
+            return Character.class;
+        return null;
     }
 
 
