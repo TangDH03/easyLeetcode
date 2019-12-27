@@ -41,7 +41,7 @@ public class listTest {
 }
 ```
 
-####For Tree
+#### For Tree
 ```java
     @Solution
     @Input(value = "[1.1,2.2,null,4.3,5.1]",container = "tree",type = "double")
@@ -57,7 +57,7 @@ value is just like leetcode,but you need to specify the argument according to th
 double ---> DoubleTreeNode
 int --------->            IntegerTreeNode
 float-------> FloatTreeNode
-####For LinkedList
+#### For LinkedList
 ```java
 public class LinkdedListTest {
     //linked list pass
@@ -77,7 +77,7 @@ double ---> DoubleListNode
 int --------->            IntegerListNode
 float-------> FloatListNode
 
-####Contribute
+#### Contribute
 If you have some good idea you could raise a PR,
 If you have some problem when you use it,raise a issue let me know
 Welcome to contribute!!
